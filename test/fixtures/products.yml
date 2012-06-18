@@ -11,3 +11,9 @@ two:
   description: MyText
   image_url: MyString
   price: 9.99
+
+magicwand:
+  title: Harrymagicwand
+  description: The one he used to kill voldemort
+  image_url: wand.jpg
+  price: 10
