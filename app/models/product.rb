@@ -1,4 +1,6 @@
 class Product < ActiveRecord::Base
+  default_scope :order => 'title'
+  
   attr_accessible :description, :image_url, :price, :title
   validates :title, :description, :image_url, :presence => true
   validates :price, :numericality => {:greater_than_or_equal_to => 0.01}
@@ -7,4 +9,15 @@ class Product < ActiveRecord::Base
 	  :with => %r{\.(gif|jpg|png)$}i,
 	  :message => 'must be a URL for GIF, PNG, or JPG image.'
   }
+  
+  private
+  
+  def ensure
+  	if line_items.empty?
+  		return true
+  	else
+  		errors.add(:base, 'Line items present')
+  		return false
+  	end
+  end
 end
