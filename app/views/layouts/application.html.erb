@@ -3,17 +3,23 @@
 <head>
   <title>Depot</title>
   <%= stylesheet_link_tag "bootstrap.min" %>
-  <%= javascript_include_tag :defaults %>
+  <%= javascript_include_tag  "application" %>	
   <%= csrf_meta_tags %>
 </head>
 <body>
 <div class="container">
-	<div class="page-header">
+	<div class="page-header" style="text-align: center">
 		<h1>PRAGMATIC BOOKSHELF</h1>
 	</div>
+	<hr>
 	<div class="row">
-		<div class="span2">
-			<ul class="nav nav-stacked nav-pills">
+		<div class="span3">
+			<div id="cart">
+			<% if @cart %>
+				<%= render @cart %>
+			<% end %>
+			</div>
+			<ul class="well nav nav-stacked nav-pills">
 				<li>
 					<a href="http://www.../">Home</a>
 				</li>
@@ -28,7 +34,7 @@
 				</li>
 			</ul>
 		</div>
-		<div class="span10">
+		<div class="span9">
 			<%= yield %>
 		</div>
 	</div>			

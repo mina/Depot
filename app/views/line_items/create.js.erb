@@ -1,0 +1,5 @@
+$("#cart").slideUp('normal', function () {
+	$("#cart").html("<%=escape_javascript(render @cart) %>");
+	$("#cart").slideDown();
+
+})
