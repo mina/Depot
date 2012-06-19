@@ -11,3 +11,14 @@
  *= require_self
  *= require_tree .
  */
+form {
+	display: inline;
+}
+
+form.button_to {
+	float:right;
+}
+
+h1.title {
+	font-size: 6em;
+}
