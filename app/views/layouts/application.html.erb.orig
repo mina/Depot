@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Depot</title>
+  <%= stylesheet_link_tag "bootstrap.min" %>
+  <%= stylesheet_link_tag "application" %>
+  <%= javascript_include_tag  "application" %>	
+  <%= csrf_meta_tags %>
+</head>
+<body>
+<div class="container">
+	<div class="page-header" style="text-align: center">
+		<h1 class="title">PRAGMATIC BOOKSHELF</h1>
+	</div>
+	<hr>
+	<div class="row">
+		<div class="span3">
+			<div id="cart">
+			<% if @cart %>
+				<%= render @cart %>
+			<% end %>
+			</div>
+			<div class="row-fluid">
+			<ul class="well nav nav-stacked nav-pills">
+				<li>
+					<%=link_to("Home", store_url)%>
+				</li>
+				<li>
+        <%=link_to("Products", products_url)%>
+				</li>
+				<li>
+					<a href="#">News</a>
+				</li>
+				<li>
+					<a href="#">Contact</a>
+				</li>
+			</ul>
+			</div>
+		</div>
+		<div class="span9">
+			<%= yield %>
+		</div>
+	</div>			
+</div>
+</body>
+</html>
